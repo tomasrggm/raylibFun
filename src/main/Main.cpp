@@ -21,8 +21,12 @@ int main(void) {
         BeginMode2D(camera.getCamera());
         DrawRectangleRec(player.getPlayer(), RED);
         
-        for(int i = 0; i < screenWidth/32 + 1; i++){
-            DrawLineV((Vector2) { (float)32.0f * i + 32.0f, 0.0f }, (Vector2){ (float) 32.0f * i + 32.0f, (float) screenHeight -32.0f}, LIGHTGRAY );
+        for(int i = 0; i < screenWidth/32 - 1; i++){
+            DrawLineV((Vector2) { (float)32.0f * i + 32.0f, 32.0f }, (Vector2){ (float) 32.0f * i + 32.0f, (float) screenHeight - 32.0f }, LIGHTGRAY );
+        }
+
+        for(int i = 0; i < screenHeight/32 - 1; i++){
+            DrawLineV((Vector2) { 32.0f, (float)32.0f * i + 32.0f }, (Vector2){ (float) screenWidth - 32.0f ,  (float) 32.0f * i + 32.0f}, LIGHTGRAY );
         }
 
 
