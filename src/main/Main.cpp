@@ -4,9 +4,11 @@
 #include "../../headers/GameCamera.h"
 #include "../../headers/KeyBindings.h"
 
+const int screenWidth = 800;
+const int screenHeight = 448;
+
 int main(void) {
-    const int screenWidth = 800;
-    const int screenHeight = 448;
+
     InitWindow(screenWidth, screenHeight, "Punpun's game");
     Unit player = Unit(32, 32, 32, 32);
     GameCamera camera = GameCamera(1.0f, {screenWidth/2.0f, screenHeight/2.0f}, {screenWidth/2.0f, screenHeight/2.0f}, 0.0f);
