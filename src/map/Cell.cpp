@@ -6,6 +6,7 @@ Cell::Cell(int x, int y, Color terrain){
     this->y = y;
     this->terrain = terrain;
     this->selected = false;
+    this->hovered = false;
 }
 
 int Cell::getX(){
@@ -17,7 +18,9 @@ int Cell::getY(){
 }
 
 Color Cell::getTerrain(){
-    return terrain;
+    if(selected) return RED;
+    else if(hovered) return BLUE;
+    else return terrain;
 }
 
 void Cell::setColor(Color color){
@@ -26,6 +29,14 @@ void Cell::setColor(Color color){
 
 void Cell::setSelected(){
     selected = !selected;
+}
+
+void Cell::setHovered(){
+    hovered=!hovered;
+}
+
+bool Cell::isHovered(){
+    return hovered;
 }
 
 bool Cell::isSelected(){
@@ -39,3 +50,4 @@ void Cell::setUnit(Unit unit){
 Unit Cell::getUnit(){
     return unit;
 }
+

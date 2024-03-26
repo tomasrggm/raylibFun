@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Unit.h"
+#include "Map.h"
 #pragma once
 
-void processKeys(Unit *unit);
+void processKeys(Map *map);

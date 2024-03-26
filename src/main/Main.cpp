@@ -21,14 +21,13 @@ int main(void) {
     SetTargetFPS(60);
 
     while(!WindowShouldClose()){
-        processKeys(&player);
+        processKeys(&map1);
         //camera.setTarget( { player.getPlayerX() + 20.0f, player.getPlayerY() + 20.0f } );
 
         BeginDrawing();
         ClearBackground(RAYWHITE);
         BeginMode2D(camera.getCamera());
         map1.printMap();
-        DrawRectangleRec(player.getPlayer(), RED);
 
         EndMode2D();
         EndDrawing();
