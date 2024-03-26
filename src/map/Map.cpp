@@ -64,5 +64,12 @@ void Map::printMap(){
         DrawLineV((Vector2) { 0.0f, (float)32.0f * i }, (Vector2){ (float) width * 32.0f,  (float) 32.0f * i }, LIGHTGRAY );
     }    
 
+    DrawRectangle(5,GetScreenHeight() * 0.8f + 5, GetScreenWidth() - 10,GetScreenHeight() * 0.2f - 10, Fade(SKYBLUE,0.5f));
+    DrawRectangleLines(5,GetScreenHeight() * 0.8f + 5, GetScreenWidth() - 10,GetScreenHeight() * 0.2f - 10, BLUE);
+    DrawText(TextFormat("Hovering position (%i,%i)",xHovered,yHovered),10, GetScreenHeight()*0.8f + 10,10,BLACK);
+    if(cells[ySelected * width + xSelected].isSelected()){
+        DrawText(TextFormat("Selected position (%i,%i)",xSelected,ySelected),10, GetScreenHeight()*0.8f + 20,10,BLACK);
+    }
+
 }
 
